@@ -33,5 +33,10 @@ namespace MyWeb.Tests.PageObjects
 			I.Press("{ENTER}");
 			//.Append(OpenQA.Selenium.Keys.Enter).To(keywordContainer); //for multi-browser
 		}
+
+		internal void ShowMessage(string errorMessage)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
