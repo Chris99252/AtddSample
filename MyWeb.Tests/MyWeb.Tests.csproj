@@ -143,6 +143,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginController.feature</DependentUpon>
     </Compile>
+    <Compile Include="LoginControllerSteps.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\WelcomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
