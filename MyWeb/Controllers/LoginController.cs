@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MyWeb.Controllers
 {
-    public class LoginController : Controller
-    {
-        //
-        // GET: /Login/
+	public class LoginController : Controller
+	{
+		//
+		// GET: /Login/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+		public ActionResult Index()
+		{
+			return View();
+		}
 
 		[HttpPost]
 		public ActionResult Index(string account, string password)
@@ -23,8 +19,11 @@ namespace MyWeb.Controllers
 			{
 				return RedirectToAction("Index", "Welcome");
 			}
-
-			return View();
+			else
+			{
+				ViewBag.Message = "wrong account or password";
+				return View();
+			}
 		}
-    }
+	}
 }
