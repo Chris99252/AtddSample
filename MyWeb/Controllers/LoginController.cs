@@ -32,12 +32,29 @@ namespace MyWeb.Controllers
 			else
 			{
 				ViewBag.Message = "wrong account or password";
-				return View();			
+				return View();
 			}
 
 			//return View();
 		}
 
-		public Models.IAuth AuthService { get; set; }
+		private Models.IAuth _auth;
+
+		public Models.IAuth AuthService
+		{
+			get
+			{
+				if (this._auth == null)
+				{
+					this._auth = new AuthService();
+				}
+
+				return this._auth;
+			}
+			set
+			{
+				this._auth = value;
+			}
+		}
 	}
 }
