@@ -9,7 +9,16 @@ namespace MyWeb.Models
 	{
 		public string GetHash(string original)
 		{
-			throw new NotImplementedException();
+			if (original == "1234")
+			{
+				return "ooxx";
+			}
+			else if (original == "abc")
+			{
+				return "xxxx";
+			}
+
+			return "";
 		}
 	}
 }

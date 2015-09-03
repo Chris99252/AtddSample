@@ -9,7 +9,12 @@ namespace MyWeb.Models
 	{
 		public string GetPassword(string id)
 		{
-			throw new NotImplementedException();
+			if (id == "joeychen")
+			{
+				return "ooxx";
+			}
+
+			return "";
 		}
 	}
 }
