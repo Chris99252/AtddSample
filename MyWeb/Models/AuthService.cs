@@ -9,16 +9,18 @@ namespace MyWeb.Models
 	{
 		public bool Validate(string account, string password)
 		{
-			//if (account == "joeychen" && password == "1234")
-			//{				
-			//	return true;
-			//}
-			//else
-			//{				
-			//	return false;
-			//}
+			//throw new NotImplementedException();
+			var passwordFromDao = this.ProfileDao.GetPassword(account);
+			var hashResult = this.Hash.GetHash(password);
 
-			throw new NotImplementedException();
+			if (passwordFromDao == hashResult)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		public IProfileDao ProfileDao { get; set; }
