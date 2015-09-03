@@ -16,15 +16,6 @@ namespace MyWeb.Controllers
 		[HttpPost]
 		public ActionResult Index(string account, string password)
 		{
-			//if (account == "joeychen" && password == "1234")
-			//{
-			//	return RedirectToAction("Index", "Welcome");
-			//}
-			//else
-			//{
-			//	ViewBag.Message = "wrong account or password";
-			//	return View();
-			//}
 			var isValid = this.AuthService.Validate(account, password);
 			if (isValid)
 			{
