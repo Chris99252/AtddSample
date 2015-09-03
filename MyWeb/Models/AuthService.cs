@@ -9,14 +9,16 @@ namespace MyWeb.Models
 	{
 		public bool Validate(string account, string password)
 		{
-			if (account == "joeychen" && password == "1234")
-			{				
-				return true;
-			}
-			else
-			{				
-				return false;
-			}
+			//if (account == "joeychen" && password == "1234")
+			//{				
+			//	return true;
+			//}
+			//else
+			//{				
+			//	return false;
+			//}
+
+			throw new NotImplementedException();
 		}
 	}
 }
