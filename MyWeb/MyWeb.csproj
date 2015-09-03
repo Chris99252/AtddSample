@@ -198,6 +198,8 @@
     <Compile Include="Models\IAuth.cs" />
     <Compile Include="Models\IHash.cs" />
     <Compile Include="Models\IProfileDao.cs" />
+    <Compile Include="Models\MyHash.cs" />
+    <Compile Include="Models\ProfileDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
