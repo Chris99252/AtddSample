@@ -60,5 +60,12 @@ namespace MyWeb.Tests.Steps
 		{
 			this._welcomePage.WelcomeMessage(welcomeMessage);
 		}
+
+		[Then(@"it should show error message ""(.*)"" on the screen")]
+		public void ThenItShouldShowErrorMessageOnTheScreen(string errorMessage)
+		{
+			this._loginPage.ShowMessage(errorMessage);
+		}
+
 	}
 }
