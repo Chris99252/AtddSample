@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyWeb.Controllers;
 using TechTalk.SpecFlow;
+using NSubstitute;
 
 namespace MyWeb.Tests.Steps
 {
@@ -65,6 +66,21 @@ namespace MyWeb.Tests.Steps
 
 			Assert.IsNotNull(actual);
 			Assert.AreEqual(errorMessage, actual.ViewBag.Message);
+		}
+
+		[Given(@"AuthService is stub")]
+		public void GivenAuthServiceIsStub()
+		{
+			var stubAuth = Substitute.For<IAuth>();
+			this._target.AuthService = stubAuth;
+		}
+
+		[Given(@"AuthService\.Validate return isValid is (.*)")]
+		public void GivenAuthService_ValidateReturnIsValidIsTrue(bool isValid)
+		{
+			var account = "";
+			var password = "";
+			this._target.AuthService.Validate(account, password).ReturnsForAnyArgs(isValid);
 		}
 	}
 }
