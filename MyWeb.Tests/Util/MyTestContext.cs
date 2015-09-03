@@ -7,6 +7,6 @@ namespace MyWeb.Tests.Util
 {
 	internal static class MyTestContext
 	{
-		public static string Domain { get { return @"http://localhost:35345"; } }
+		public static string Domain { get { return @"http://localhost:16486"; } }
 	}
 }
