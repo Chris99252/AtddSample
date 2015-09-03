@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyWeb.Models;
 using TechTalk.SpecFlow;
+using NSubstitute;
 
 namespace MyWeb.Tests.Steps
 {
@@ -46,6 +47,34 @@ namespace MyWeb.Tests.Steps
 		{
 			var actual = ScenarioContext.Current.Get<bool>("result");
 			Assert.AreEqual(expectedResult, actual);
+		}
+
+		[Given(@"ProfileDao is stub")]
+		public void GivenProfileDaoIsStub()
+		{
+			var profileDao = Substitute.For<IProfileDao>();
+			this._target.ProfileDao = profileDao;
+		}
+
+		[Given(@"ProfileDao's GetPassword will return (.*)")]
+		public void GivenProfileDaoSGetPasswordWillReturn(string passwordFromDao)
+		{
+			var id = "";
+			this._target.ProfileDao.GetPassword(id).ReturnsForAnyArgs(passwordFromDao);
+		}
+
+		[Given(@"Hash is stub")]
+		public void GivenHashIsStub()
+		{
+			var hash = Substitute.For<IHash>();
+			this._target.Hash = hash;
+		}
+
+		[Given(@"Hash's GetHash will return (.*)")]
+		public void GivenHashSGetHashWillReturn(string hashResult)
+		{
+			var original = "";
+			this._target.Hash.GetHash(original).ReturnsForAnyArgs(hashResult);
 		}
 	}
 }
