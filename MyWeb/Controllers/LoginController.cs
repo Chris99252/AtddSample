@@ -26,8 +26,6 @@ namespace MyWeb.Controllers
 				ViewBag.Message = "wrong account or password";
 				return View();
 			}
-
-			//return View();
 		}
 
 		private Models.IAuth _auth;

@@ -10,14 +10,11 @@ namespace MyWeb.Models
 		public bool Validate(string account, string password)
 		{
 			if (account == "joeychen" && password == "1234")
-			{
-				//return RedirectToAction("Index", "Welcome");
+			{				
 				return true;
 			}
 			else
-			{
-				//ViewBag.Message = "wrong account or password";				
-				//return View();
+			{				
 				return false;
 			}
 		}
