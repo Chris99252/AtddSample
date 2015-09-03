@@ -29,8 +29,13 @@ namespace MyWeb.Controllers
 			{
 				return RedirectToAction("Index", "Welcome");
 			}
+			else
+			{
+				ViewBag.Message = "wrong account or password";
+				return View();			
+			}
 
-			return View();
+			//return View();
 		}
 
 		public Models.IAuth AuthService { get; set; }
