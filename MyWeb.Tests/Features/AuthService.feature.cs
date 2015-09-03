@@ -68,7 +68,7 @@ namespace MyWeb.Tests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void Validate(string scenario, string id, string password, string result, string[] exampleTags)
+        public virtual void Validate(string scenario, string id, string password, string result, string passwordFromDao, string hashResult, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate", exampleTags);
 #line 3
@@ -78,8 +78,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
  testRunner.And(string.Format("password is {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
- testRunner.When("I invoke Validate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("ProfileDao is stub", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
+ testRunner.And(string.Format("ProfileDao\'s GetPassword will return {0}", passwordFromDao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.And("Hash is stub", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.And(string.Format("Hash\'s GetHash will return {0}", hashResult), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("I invoke Validate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
  testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -93,9 +101,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:id", "joeychen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:result", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:passwordFromDao", "ooxx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:hashResult", "ooxx")]
         public virtual void Validate_Valid()
         {
-            this.Validate("valid", "joeychen", "1234", "true", ((string[])(null)));
+            this.Validate("valid", "joeychen", "1234", "true", "ooxx", "ooxx", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -106,9 +116,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:id", "joeychen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "abc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:result", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:passwordFromDao", "ooxx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:hashResult", "xxxx")]
         public virtual void Validate_Invalid()
         {
-            this.Validate("invalid", "joeychen", "abc", "false", ((string[])(null)));
+            this.Validate("invalid", "joeychen", "abc", "false", "ooxx", "xxxx", ((string[])(null)));
         }
     }
 }
