@@ -36,7 +36,8 @@ namespace MyWeb.Controllers
 			{
 				if (this._auth == null)
 				{
-					this._auth = new AuthService();
+					//this._auth = new AuthService();
+					this._auth = new AuthService { Hash = new MyHash(), ProfileDao = new ProfileDao() };
 				}
 
 				return this._auth;
