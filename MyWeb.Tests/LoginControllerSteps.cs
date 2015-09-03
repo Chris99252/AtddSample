@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyWeb.Controllers;
 using TechTalk.SpecFlow;
@@ -57,6 +56,15 @@ namespace MyWeb.Tests.Steps
 
 			Assert.IsNotNull(actual);
 			Assert.AreEqual(actionName, actual.RouteValues["Action"]);
+		}
+
+		[Then(@"result's ViewBag Message should be ""(.*)""")]
+		public void ThenResultSViewBagMessageShouldBe(string errorMessage)
+		{
+			var actual = ScenarioContext.Current.Get<ActionResult>() as ViewResult;
+
+			Assert.IsNotNull(actual);
+			Assert.AreEqual(errorMessage, actual.ViewBag.Message);
 		}
 	}
 }
