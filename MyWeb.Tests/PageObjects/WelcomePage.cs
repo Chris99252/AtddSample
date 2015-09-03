@@ -13,5 +13,15 @@ namespace MyWeb.Tests.PageObjects
 		{
 
 		}
+
+		internal void CheckAt()
+		{
+			throw new NotImplementedException();
+		}
+
+		internal void WelcomeMessage(string welcomeMessage)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

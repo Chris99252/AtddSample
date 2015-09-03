@@ -15,5 +15,20 @@ namespace MyWeb.Tests.PageObjects
 		{
 
 		}
+
+		internal void Account(string account)
+		{
+			throw new NotImplementedException();
+		}
+
+		internal void Password(string password)
+		{
+			throw new NotImplementedException();
+		}
+
+		internal void Login()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
