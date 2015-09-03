@@ -8,5 +8,10 @@ namespace MyWeb.Tests.PageObjects
 {
 	public class WelcomePage : PageObject<WelcomePage>
 	{
+		public WelcomePage(FluentTest test)
+			: base(test)
+		{
+
+		}
 	}
 }

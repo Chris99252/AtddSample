@@ -8,5 +8,12 @@ namespace MyWeb.Tests.PageObjects
 {
 	public class LoginPage : PageObject<LoginPage>
 	{
+		private Steps.LoginSteps loginSteps;
+
+		public LoginPage(FluentTest test)
+			: base(test)
+		{
+
+		}
 	}
 }
