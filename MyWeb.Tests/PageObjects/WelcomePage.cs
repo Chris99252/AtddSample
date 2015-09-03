@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentAutomation;
+using MyWeb.Tests.Util;
 
 namespace MyWeb.Tests.PageObjects
 {
 	public class WelcomePage : PageObject<WelcomePage>
 	{
+		private const string welcomeMessageContainer = "#message";
+
 		public WelcomePage(FluentTest test)
 			: base(test)
 		{
-
+			Url = string.Format("{0}/{1}", MyTestContext.Domain, "Welcome");
 		}
 
 		internal void CheckAt()
 		{
-			throw new NotImplementedException();
+			I.Assert.Url(this.Url);
 		}
 
 		internal void WelcomeMessage(string welcomeMessage)
 		{
-			throw new NotImplementedException();
+			I.Assert.Text(welcomeMessage).In(welcomeMessageContainer);
 		}
 	}
 }
