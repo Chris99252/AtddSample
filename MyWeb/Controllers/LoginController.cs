@@ -24,6 +24,11 @@ namespace MyWeb.Controllers
 			//	ViewBag.Message = "wrong account or password";
 			//	return View();
 			//}
+			var isValid = this.AuthService.Validate(account, password);
+			if (isValid)
+			{
+				return RedirectToAction("Index", "Welcome");
+			}
 
 			return View();
 		}
