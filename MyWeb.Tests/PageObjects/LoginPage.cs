@@ -11,6 +11,7 @@ namespace MyWeb.Tests.PageObjects
 	{
 		private const string AccountContainer = "#account";
 		private const string PasswordContainer = "#password";
+		private const string ErrorMessageContainer = "#errorMessage";
 
 		public LoginPage(FluentTest test)
 			: base(test)
@@ -36,7 +37,7 @@ namespace MyWeb.Tests.PageObjects
 
 		internal void ShowMessage(string errorMessage)
 		{
-			throw new NotImplementedException();
+			I.Assert.Text(errorMessage).In(ErrorMessageContainer);
 		}
 	}
 }
