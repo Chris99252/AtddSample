@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyWeb.Controllers;
 using TechTalk.SpecFlow;
 using NSubstitute;
+using MyWeb.Models;
 
 namespace MyWeb.Tests.Steps
 {

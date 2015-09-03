@@ -27,5 +27,7 @@ namespace MyWeb.Controllers
 
 			return View();
 		}
+
+		public Models.IAuth AuthService { get; set; }
 	}
 }
