@@ -1,6 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using FluentAutomation;
+using MyWeb.Tests.PageObjects;
 
 namespace MyWeb.Tests.Steps
 {
