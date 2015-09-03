@@ -196,6 +196,8 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AuthService.cs" />
     <Compile Include="Models\IAuth.cs" />
+    <Compile Include="Models\IHash.cs" />
+    <Compile Include="Models\IProfileDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

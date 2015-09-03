@@ -20,5 +20,9 @@ namespace MyWeb.Models
 
 			throw new NotImplementedException();
 		}
+
+		public IProfileDao ProfileDao { get; set; }
+
+		public IHash Hash { get; set; }
 	}
 }
